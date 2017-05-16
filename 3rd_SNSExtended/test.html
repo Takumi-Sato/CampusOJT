@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <title>Document</title>
+</head>
+<body>
+  
+  <p><input type="text" placeholder="氏名"></p>
+  <p><input class="old" type="number"></p>
+  <p><input class="calendar" type="date"></p>
+  <p><input type="password"></p>
+  <p>
+    <label>
+      <input name="gender" type="radio" value="男性" checked>男性
+    </label>
+    <label>
+      <input name="gender" type="radio" value="女性">女性
+    </label>
+  </p>
+  <p><input type="checkbox"></p>
+  <p>
+    <input type="range" min="10" max="50" step="10">
+  </p>
+  <p><input type="color"></p>
+  <p><input type="file"></p>
+  <p><textarea name="t" cols="30" rows="10"></textarea>
+  <p>
+  <select name="" id="">
+    <option value="北海道">北海道</option>
+    <option value="東北">東北</option>
+    <option value="関東">関東</option>
+    <option value="北陸">北陸</option>
+    <option value="中部">中部</option>
+  </select>
+  </p>
+
+  <script>
+    var calendar = document.querySelector(".calendar");
+    calendar.addEventListener("change", calendar_changed);
+    function calendar_changed() {
+      console.log(this.value);
+    }
+    console.log(calendar);
+
+    var old = document.querySelector(".old");
+    old.addEventListener("change", old_changed);
+    function old_changed () {
+      var old_val = this.value;
+      console.log(old_val);
+    }
+
+  </script>
+
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+  
+  <script>
+    $("[name='gender']").on("change", gender_changed);
+    function gender_changed () {
+        console.log($(this).val());
+    }
+  </script>
+
+</body>
+</html>

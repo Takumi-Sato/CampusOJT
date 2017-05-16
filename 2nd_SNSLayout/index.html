@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="main_header">
+        <h1>DICE とのトークルーム</h1>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </header>
+    <div class="chat_container">
+        <div class="chat_item">
+            <img class="icon" src="img/shirona.png" alt="">
+            <div class="talk_box">Hello, World!!</div>
+            <div class="talk_time">
+                12:34
+            </div>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </div>
+        <div class="chat_item from_me">
+            <img class="icon" src="img/serina.png" alt="">
+            <div class="talk_box">Hello, World!!</div>
+            <div class="talk_time">
+                12:36
+            </div>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="input_container">
+        <input type="text">
+        <button class="submit">送信</button>
+    </div>
+    <div class="drawer_menu">
+        <div class="close_btn">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul>
+            <li><a href="#" class="clear_talk">トークを消去</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+        </ul>
+    </div>
+    <div class="edit_window">
+        <div class="edit_box_and_button">
+            <textarea class="edit_box"></textarea>
+            <button class="edit_cancel" type="submit">Cancel</button>
+            <button class="edit_confirm" type="submit">OK</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

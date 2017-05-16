@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>File API Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="file_upload_container">
+        <input type="file" id="files">
+        <i class="fa fa-picture-o" aria-hidden="true"></i>
+    </div>
+    <img src="" alt="" id="img">
+    <div id="text"></div>
+    <script>
+    var input = document.getElementById("files");
+    input.addEventListener("change", onChangeHandler, false);
+
+    function onChangeHandler() {
+        var files = input.files;
+        var reader = new FileReader();
+        if (this.files[0].type.indexOf("image") != -1) {
+            reader.readAsDataURL(files[0]);
+            reader.onload = function() {
+                console.log(reader.result)
+                var img = document.getElementById("img");
+                img.src = reader.result;
+            }
+        } else if (this.files[0].type.indexOf("text") != -1) {
+            reader.readAsText(files[0]);
+            reader.onload = function(e) {
+                console.log(reader.result)
+                var txt = document.getElementById("text");
+                txt.innerText = reader.result
+            }
+        }
+    }
+    </script>
+
+    <style>
+    	.file_upload_container {
+					position: relative;
+					width: 50px;
+					height: 50px;
+					overflow: hidden;
+					background-color: #ccc;
+					border-radius: 50%;
+    	}
+
+    	#files {
+				position: absolute;
+				z-index: 2;
+				width: 50px;
+				height: 50px;
+				opacity: 0;
+    	}
+
+    	.fa-picture-o {
+    		position: absolute;
+    		top: 12px;
+    		left: 11px;
+    		font-size: 28px;
+    		z-index: 1;
+    	}
+    </style>
+</body>
+
+</html>

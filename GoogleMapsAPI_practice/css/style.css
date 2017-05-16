@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#now_map {
+  width: 600px;
+  height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#access_map {
+  width: 320px;
+  height: 240px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main_content .sentense {
+  text-align: center;
+}

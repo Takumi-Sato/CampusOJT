@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+    
+    .friends_info {
+        list-style: lower-greek;
+        padding: 0;
+        margin: 0;
+        width: 80%;
+        align-items: center;
+    }
+    
+    .friends_info li {
+        padding: 0;
+        margin: 0;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    .loading .overlay {
+      display: flex;
+    }
+
+    .loading_icon img{
+      width: 50px;
+      height: 50px;
+      animation: spin 1s infinite linear;
+    }
+
+    /* これは回転だが、拡大縮小や平行移動なんかもできる */
+    @keyframes spin{
+      0% {
+        transform: rotate(0);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+
+    .name {}
+    
+    .old {
+        align-items: center;
+    }
+    
+    .friends_info li:first-child {
+        background-color: #ccc;
+    }
+    
+    .friends_info li:nth-child(2n+1) {
+        background-color: #cfc;
+    }
+    
+    @media screen and (max-width: 480px) {
+        .friends_info {
+            margin: 1rem 1rem;
+        }
+    }
+    </style>
+    <ul class="friends_info">
+    </ul>
+    <div class="overlay">
+        <div class="loading_icon">
+            <img src="img/loading_icon.png" alt="loading_icon">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+    var arr = [{
+        "name": "佐藤",
+        "old": 18
+    }, {
+        "name": "山田",
+        "old": 20
+    }, {
+        "name": "鈴木",
+        "old": 22
+    }, ];
+    for (var i = 0; i < arr.length; ++i) {
+        //console.log(arr[i]);
+        var name = arr[i].name;
+        var old = arr[i].old;
+        //console.log(name + " " + old + "歳");
+        var dom = "<li><div class=\"name\">" + name + "</div><div class=\"old\">" + old + "</div></li>"
+        $(".friends_info").append(dom);
+    }
+
+    setTimeout(function () {
+      // ロード開始
+      $("body").addClass('loading');
+      setTimeout(function () {
+        // 2秒後にロード完了
+        $("body").removeClass("loading");
+      }, 2000);
+    }, 1000);
+
+    </script>
+</body>
+
+</html>

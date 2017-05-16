@@ -1,0 +1,235 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #FFD4B6;
+}
+
+.main_header {
+    background-color: rgba(255, 255, 255, .9);
+    height: 60px;
+    position: fixed;
+    width: 100%;
+}
+
+.main_header h1 {
+    font-size: 100%;
+    text-align: center;
+    margin-top: 17px;
+    font-weight: normal;
+}
+
+.main_header i{
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.input_container {
+    background-color: rgba(255, 255, 255, .9);
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+}
+
+.input_container input {
+    font-size: 100%;
+    width: 70%;
+}
+
+.input_container .submit {
+    font-size: 80%;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: #C4D4B5;
+    border: none;
+    color: #FFF;
+    border-radius: 4px;
+    padding: 4px 25px;
+    margin-left: 20px;
+}
+
+.input_margin {
+  height: 10px;
+  margin-bottom: 40px;
+}
+
+.chat_container {
+    padding-top: 60px;
+    display: block;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+.chat_item {
+    padding: 10px;
+    clear: both;
+}
+
+.chat_item .icon {
+    width: 40px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.chat_item .talk_box {
+    background-color: #fff;
+    border-radius: 0 20px 20px 20px;
+    padding: 5px 15px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 90%;
+    max-width: calc(90% - 100px);
+}
+
+.chat_item .talk_time {
+    font-size: 70%;
+    margin-top: 20px;
+    float: left;
+    color: #aaa;
+    /* flex_hoge */
+}
+
+.chat_item .fa-trash {
+    float: left;
+    font-size: 120%;
+    margin-left: 10px;
+}
+
+.from_me .icon {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.from_me .talk_box {
+    float: right;
+    margin-right: 0;
+    margin-left: 5px;
+    border-radius: 20px 0 20px 20px;
+    background-color: #1BD32C;
+}
+
+.from_me .talk_time {
+    float: right;
+}
+
+.from_me .fa-trash {
+    float: right;
+    margin-right: 10px;
+}
+
+.from_me .fa-pencil {
+    float: right;
+    margin-left: 10px;
+}
+
+/* 機能が不足しているのでコメントアウト
+.editted_mark {
+    float: right;
+    color: #ccc;
+}
+*/
+
+/*-----Menu------*/
+
+.drawer_menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateX(-100%);
+  transition: transform 1.0s;
+}
+
+/* drawer_menu class が menu_open calss の子クラスになったときに反映 */
+.menu_open .drawer_menu {
+  transform: translateX(0);
+}
+
+.drawer_menu .close_btn {
+  height: 60px;
+}
+
+.drawer_menu .close_btn i {
+  font-size: 128%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.drawer_menu ul{
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+.drawer_menu li {
+  padding: 0;
+  list-style-type: none;
+}
+
+.drawer_menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+}
+
+
+/* ----- メッセージエディットボックス ----- */
+
+.edit_window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateX(-100%);
+}
+
+.show_edit .edit_window {
+  transform: translateX(0);
+}
+
+.edit_window .edit_box_and_button {
+  background-color: #000;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  height: max-content;
+  width: max-content;
+  padding: 10px;
+}
+
+.edit_box_and_button .edit_box {
+  height: 50px;
+  width: 200px;
+  display: block;
+}
+
+.edit_box_and_button .edit_confirm {
+  float: right;
+  margin: 5px;
+}
+
+.edit_box_and_button .edit_cancel {
+  float: right;
+  margin: 5px;
+}
+
+
